@@ -83,6 +83,7 @@ public class TestBase {
 
   @AfterMethod(alwaysRun = true)
   public void tearDown() throws Exception {
+    logOut();
     wd.quit();
   }
 
@@ -102,6 +103,10 @@ public class TestBase {
     } catch (NoAlertPresentException e) {
       return false;
     }
+  }
+
+  protected void logOut () {
+    wd.findElement(By.linkText("Logout")).click();
   }
 
   protected void deleteSelectedGroups() {
