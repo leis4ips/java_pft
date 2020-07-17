@@ -3,6 +3,8 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 import java.util.ArrayList;
@@ -26,11 +28,17 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("(//input[@name='submit'])[2]"));
   }
 
-  public void fillContactForm(ContactData contactData) {
+  public void fillContactForm(ContactData contactData, boolean creation) {
     type(By.name("firstname"), contactData.getFirstname());
     type(By.name("lastname"), contactData.getLastname());
     type(By.name("mobile"), contactData.getMobile());
     type(By.name("email"), contactData.getEmail());
+
+    if(creation) {
+      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+    } else {
+      Assert.assertFalse(isElementPresent(By.name("new_group")));
+    }
   }
 
   public void confirmSelection() {
@@ -55,7 +63,7 @@ public class ContactHelper extends HelperBase {
 
   public void createContact(ContactData contact) {
     gotoContactPage();
-    fillContactForm(contact);
+    fillContactForm(contact, true);
     submitContactCreation();
     returnToHomePage();
   }
@@ -76,7 +84,7 @@ public class ContactHelper extends HelperBase {
       String lastname = element.getText();
       String email = element.getText();
       String mobile = element.getText();
-      ContactData contact = new ContactData(firstname, lastname, email, mobile);
+      ContactData contact = new ContactData(firstname, lastname, email, mobile, null);
       contacts.add(contact);
     }
     return contacts;
