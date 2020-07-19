@@ -8,9 +8,9 @@ public class ContactData {
   private final String mobile;
   private final String email;
   private String group;
-  private String id;
+  private int id;
 
-  public ContactData(String id, String firstname, String lastname, String mobile, String email, String group) {
+  public ContactData(int id, String firstname, String lastname, String mobile, String email, String group) {
     this.id = id;
     this.firstname = firstname;
     this.lastname = lastname;
@@ -20,7 +20,7 @@ public class ContactData {
   }
 
   public ContactData(String firstname, String lastname, String mobile, String email, String group) {
-    this.id = null;
+    this.id = 0;
     this.firstname = firstname;
     this.lastname = lastname;
     this.mobile = mobile;
@@ -62,9 +62,9 @@ public class ContactData {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     ContactData that = (ContactData) o;
-    return Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname) &&
-            Objects.equals(id, that.id);
+    return id == that.id &&
+            Objects.equals(firstname, that.firstname) &&
+            Objects.equals(lastname, that.lastname);
   }
 
   @Override
@@ -72,7 +72,11 @@ public class ContactData {
     return Objects.hash(firstname, lastname, id);
   }
 
-  public String getId() {
+  public int getId() {
     return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
   }
 }
