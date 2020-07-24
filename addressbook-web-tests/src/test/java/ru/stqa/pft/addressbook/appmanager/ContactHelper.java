@@ -38,8 +38,6 @@ public class ContactHelper extends HelperBase {
     type(By.name("email2"), contactData.getEmail2());
     type(By.name("email3"), contactData.getEmail3());
     type(By.name("address"), contactData.getAddress());
-    type(By.name("address2"), contactData.getAddress());
-
     try {
       if (creation) {
         new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
@@ -135,11 +133,10 @@ public class ContactHelper extends HelperBase {
     String email2 = wd.findElement(By.name("email2")).getAttribute("value");
     String email3 = wd.findElement(By.name("email3")).getAttribute("value");
     String address = wd.findElement(By.name("address")).getText();
-//    String address2 = wd.findElement(By.name("address2")).getText();
     wd.navigate().back();
     return new ContactData().withId(contact.getId()).withFirstname(firstname).withLastname(lastname)
             .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work).withEmail(email)
-            .withEmail2(email2).withEmail3(email3).withAddress(address)/*.withAddress2(address2)*/;
+            .withEmail2(email2).withEmail3(email3).withAddress(address);
   }
 
 }

@@ -14,7 +14,6 @@ public class ContactData {
   private String email3;
   private String allEmails;
   private String address;
-//  private String address2;
   private String group;
   private int id = Integer.MAX_VALUE;
 
@@ -75,10 +74,6 @@ public class ContactData {
     return address;
   }
 
-//  public String getAddress2() {
-//    return address2;
-//  }
-
   public ContactData withId(int id) {
     this.id = id;
     return this;
@@ -133,11 +128,6 @@ public class ContactData {
     this.address = address;
     return this;
   }
-
-//  public ContactData withAddress2(String address2) {
-//    this.address2 = address2;
-//    return this;
-//  }
 
   public ContactData withGroup(String group) {
     this.group = group;
