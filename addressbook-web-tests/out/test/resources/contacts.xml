@@ -1,0 +1,29 @@
+<list>
+  <contact>
+    <firstname>Test 0</firstname>
+    <lastname>Testov 0</lastname>
+    <homePhone>82-32-56 0</homePhone>
+    <mobilePhone>+79005662331 0</mobilePhone>
+    <email>test@test.ts 0</email>
+    <address>Nasedkina 3/8
+0</address>
+  </contact>
+  <contact>
+    <firstname>Test 1</firstname>
+    <lastname>Testov 1</lastname>
+    <homePhone>82-32-56 1</homePhone>
+    <mobilePhone>+79005662331 1</mobilePhone>
+    <email>test@test.ts 1</email>
+    <address>Nasedkina 3/8
+1</address>
+  </contact>
+  <contact>
+    <firstname>Test 2</firstname>
+    <lastname>Testov 2</lastname>
+    <homePhone>82-32-56 2</homePhone>
+    <mobilePhone>+79005662331 2</mobilePhone>
+    <email>test@test.ts 2</email>
+    <address>Nasedkina 3/8
+2</address>
+  </contact>
+</list>
