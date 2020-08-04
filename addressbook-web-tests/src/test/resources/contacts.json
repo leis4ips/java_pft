@@ -1,0 +1,26 @@
+[
+  {
+    "firstname": "Test 0",
+    "lastname": "Testov 0",
+    "homePhone": "82-32-56 0",
+    "mobilePhone": "+79005662331 0",
+    "email": "test@test.ts 0",
+    "address": "Nasedkina 3/8\n0"
+  },
+  {
+    "firstname": "Test 1",
+    "lastname": "Testov 1",
+    "homePhone": "82-32-56 1",
+    "mobilePhone": "+79005662331 1",
+    "email": "test@test.ts 1",
+    "address": "Nasedkina 3/8\n1"
+  },
+  {
+    "firstname": "Test 2",
+    "lastname": "Testov 2",
+    "homePhone": "82-32-56 2",
+    "mobilePhone": "+79005662331 2",
+    "email": "test@test.ts 2",
+    "address": "Nasedkina 3/8\n2"
+  }
+]
