@@ -5,7 +5,7 @@
     "homePhone": "82-32-56 0",
     "mobilePhone": "+79005662331 0",
     "email": "test@test.ts 0",
-    "address": "Nasedkina 3/8\n0"
+    "address": "Nasedkina 3/8 0"
   },
   {
     "firstname": "Test 1",
@@ -13,7 +13,7 @@
     "homePhone": "82-32-56 1",
     "mobilePhone": "+79005662331 1",
     "email": "test@test.ts 1",
-    "address": "Nasedkina 3/8\n1"
+    "address": "Nasedkina 3/8 1"
   },
   {
     "firstname": "Test 2",
@@ -21,6 +21,6 @@
     "homePhone": "82-32-56 2",
     "mobilePhone": "+79005662331 2",
     "email": "test@test.ts 2",
-    "address": "Nasedkina 3/8\n2"
+    "address": "Nasedkina 3/8 2"
   }
 ]
