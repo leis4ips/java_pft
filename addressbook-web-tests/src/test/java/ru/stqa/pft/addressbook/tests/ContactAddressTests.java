@@ -17,7 +17,7 @@ public class ContactAddressTests extends TestBase {
     }
   }
 
-  @Test
+  @Test(enabled = false)
   public void testContactAddresses() {
     app.goTo().homePage();
     ContactData contact = app.contact().all().iterator().next();
