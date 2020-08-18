@@ -91,6 +91,11 @@ public class ContactData {
     return this;
   }
 
+  public ContactData removeGroups(GroupData group) {
+    groups.remove(group);
+    return this;
+  }
+
   public int getId() {
     return id;
   }
