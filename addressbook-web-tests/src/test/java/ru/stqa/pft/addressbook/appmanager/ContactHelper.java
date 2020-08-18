@@ -39,13 +39,12 @@ public class ContactHelper extends HelperBase {
     type(By.name("email3"), contactData.getEmail3());
     type(By.name("address"), contactData.getAddress());
 //    attach(By.name("photo"), contactData.getPhoto());
-    try {
+    if (contactData.getGroups().size() > 0) {
       if (creation) {
-        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-      } else {
-        Assert.assertFalse(isElementPresent(By.name("new_group")));
-      }
-    } catch (NullPointerException e) {
+        Assert.assertTrue(contactData.getGroups().size() == 1);
+        new Select(wd.findElement(By.name("new_group")))
+                .selectByVisibleText(contactData.getGroups().iterator().next().getName());
+      } else Assert.assertFalse(isElementPresent(By.name("new_group")));
     }
   }
 
