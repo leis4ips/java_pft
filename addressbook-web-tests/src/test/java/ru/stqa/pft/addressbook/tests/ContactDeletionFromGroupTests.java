@@ -31,6 +31,7 @@ public class ContactDeletionFromGroupTests extends TestBase {
     }
     contacts.removeAll(contactsWithoutGroup);
     if (contacts.size() == 0) {
+      app.goTo().groupPage();
       app.contact().addToGroup(app.db().contacts().iterator().next(), app.db().groups().iterator().next());
     }
   }
@@ -51,7 +52,14 @@ public class ContactDeletionFromGroupTests extends TestBase {
     GroupData group = contact.getGroups().iterator().next();
     app.contact().deletionContactFromGroup(group, contact);
     before.remove(group);
-    Groups after = contact.getGroups();
+    Contacts afterUpd = app.db().contacts();
+    ContactData updContact = new ContactData();
+    for (ContactData contactAfterUpd : afterUpd) {
+      if (contactAfterUpd.getId() == contact.getId()) {
+        updContact = contactAfterUpd;
+      }
+    }
+    Groups after = updContact.getGroups();
     assertThat(after, equalTo(before));
   }
 }
