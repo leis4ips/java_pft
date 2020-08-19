@@ -5,22 +5,30 @@ repositories {
 }
 
 dependencies {
-    compile 'org.testng:testng:7.1.0'
-    compile 'org.seleniumhq.selenium:selenium-java:4.0.0-alpha-6'
-    compile 'org.hamcrest:java-hamcrest:2.0.0.0'
+    implementation 'org.testng:testng:7.1.0'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.0.0-alpha-6'
+    implementation 'org.hamcrest:hamcrest:2.2'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.12'
+    implementation 'commons-net:commons-net:3.7'
+    implementation 'org.subethamail:subethasmtp:3.1.7'
+    implementation 'ru.lanwen.verbalregex:java-verbal-expressions:1.6'
+    implementation 'ch.qos.logback:logback-classic:1.3.0-alpha5'
+    implementation 'org.hibernate:hibernate-core:5.4.19.Final'
+    implementation 'com.thoughtworks.xstream:xstream:1.4.12'
+    implementation 'mysql:mysql-connector-java:8.0.21'
 }
 
-test {
-    useTestNG() {
-        suites 'src/test/resources/testng.xml'
-    }
-    if (project.hasProperty('browser')) {
-        systemProperty 'browser', "${browser}"
-    }
-    if (project.hasProperty('target')) {
-        systemProperty 'target', "${target}"
-    }
-    if (project.hasProperty('verifyUI')){
-        systemProperty 'verifyUI', "${verifyUI}"
-    }
-}
+//test {
+//    useTestNG() {
+//        suites 'src/test/resources/testng.xml'
+//    }
+//    if (project.hasProperty('browser')) {
+//        systemProperty 'browser', "${browser}"
+//    }
+//    if (project.hasProperty('target')) {
+//        systemProperty 'target', "${target}"
+//    }
+//    if (project.hasProperty('verifyUI')){
+//        systemProperty 'verifyUI', "${verifyUI}"
+//    }
+//}

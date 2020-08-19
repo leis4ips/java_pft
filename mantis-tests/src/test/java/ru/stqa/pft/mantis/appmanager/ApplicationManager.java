@@ -32,11 +32,18 @@ public class ApplicationManager {
       wd = new ChromeDriver();
     }
     wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-    wd.get(properties.getProperty("web.baseUrl"));
+    wd.get(properties.getProperty("web.baseURL"));
   }
 
   public void stop() {
     wd.quit();
   }
 
+  public HttpSession newSession() {
+    return new HttpSession(this);
+  }
+
+  public String getProperty(String key) {
+    return properties.getProperty(key);
+  }
 }
