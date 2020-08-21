@@ -20,6 +20,8 @@ public class ApplicationManager {
   private RegistrationHelper registrationHelper;
   private FtpHelper ftp;
   private MailHelper mailHelper;
+  private DBHelper db;
+  private ResetPasswordHelper rspass;
 
   public ApplicationManager(String browser) {
     this.browser = browser;
@@ -64,6 +66,20 @@ public class ApplicationManager {
       mailHelper = new MailHelper(this);
     }
     return mailHelper;
+  }
+
+  public DBHelper db(){
+    if (db == null){
+      db = new DBHelper(this);
+    }
+    return db;
+  }
+
+  public ResetPasswordHelper rsPass(){
+    if (rspass == null){
+      rspass = new ResetPasswordHelper(this);
+    }
+    return rspass;
   }
 
   public WebDriver getDriver() {
