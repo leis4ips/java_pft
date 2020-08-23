@@ -59,5 +59,4 @@ public class Issue {
   public int hashCode() {
     return Objects.hash(id, subject, description, state_name);
   }
-
 }

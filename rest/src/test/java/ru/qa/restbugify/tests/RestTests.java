@@ -19,5 +19,4 @@ public class RestTests extends TestBase {
     oldIssues.add(new Issue().withId(issueId));
     Assert.assertEquals(newIssues, oldIssues);
   }
-
 }
