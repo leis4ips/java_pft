@@ -3,7 +3,6 @@ package ru.stqa.pft.mantis.tests;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import ru.lanwen.verbalregex.VerbalExpression;
 import ru.stqa.pft.mantis.model.MailMessage;
 
 import javax.mail.MessagingException;
@@ -15,7 +14,7 @@ import static org.testng.Assert.assertTrue;
 public class RegistrationTests extends TestBase {
 
   @BeforeMethod
-  public void startMailServer(){
+  public void startMailServer() {
     app.mail().start();
   }
 
@@ -28,12 +27,12 @@ public class RegistrationTests extends TestBase {
     app.registration().start(user, email);
     List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);
     String confirmationLink = app.mail().findConfirmationLink(mailMessages, email);
-    app.registration().finish(confirmationLink,user, password);
-    assertTrue(app.newSession().login(user,password));
+    app.registration().finish(confirmationLink, user, password);
+    assertTrue(app.newSession().login(user, password));
   }
 
   @AfterMethod(alwaysRun = true)
-  public void stopMailServer(){
+  public void stopMailServer() {
     app.mail().stop();
 
   }
