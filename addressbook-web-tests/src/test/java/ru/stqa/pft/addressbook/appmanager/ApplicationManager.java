@@ -1,14 +1,15 @@
 package ru.stqa.pft.addressbook.appmanager;
 
-import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
@@ -46,7 +47,6 @@ public class ApplicationManager {
     } else {
       DesiredCapabilities capabilties = new DesiredCapabilities();
       capabilties.setBrowserName(browser);
-      capabilties.setPlatform(Platform.fromString(System.getProperty("platform", "win7")));
       wd = new RemoteWebDriver(new URL(properties.getProperty("selenium.server")), capabilties);
     }
     wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
